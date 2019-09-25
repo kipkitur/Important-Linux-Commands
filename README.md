@@ -1,0 +1,84 @@
+ 
+ 
+1. Extract contents of a compressed folder
+sudo apt install unrar
+* run this command if you get this error message when trying to extract files
+
+
+
+
+
+
+
+
+2. Logout of the terminal and shutdown your virtual machine
+poweroff
+3. ls -alh & cat .gitignore | less (cm1 & cm2 image)
+cat .gitignore 
+The cat command (short for “concatenate”) lists the contents of files to the terminal window. This is faster than opening the file in an editor, and there’s no chance you can accidentally alter the file. To read the contents of your .gitignore file, type the following command while the home directory is your current working directory.
+cat .gitignore | less
+With files longer than the number of lines in your terminal window, the text will whip past too fast for you to read. You can pipe the output from cat through less to make the process more manageable. With less you can scroll forward and backward through the file using the Up and Down Arrow keys, the PgUp and PgDn keys, and the Home and End keys. Type q to quit from less or shift key+q.
+
+ls -alh
+List all files and folders in the current directory in human readable format
+
+
+4. Freeing/Cleaning up space
+sudo apt autoremove 
+remove installed packages that are taking up space
+sudo du -sh var/cache/apt 
+view how much space is taken up by cache
+sudo apt clean 
+clean up cache space
+du -sh ~/.cache/thumbnails/ 
+check space taken up by thumbnails
+rm -rf ~/.cache/thumbnails/* 
+clear thumbnail space
+ 
+5. Move between/Change directories
+cd ~ 
+Switch to the user directory
+cd / 
+Switch to the root directory
+
+cd ../.. 
+Move up two directories. For example, move from /home/username/d1/d2/d3/ to /home/username/d1/
+
+ 
+6. Check dependencies, Search & Purge packages
+Use the ‘showpkg‘ sub command to check the dependencies for particular software packages. Whether those dependencies packages are installed or not. For example, use the ‘showpkg‘ command along with package-name. In this example it will return dependencies for docker.io
+apt-cache showpkg docker.io
+
+Use the ‘search’ command to check certain applications bundled with a package you have installed
+apt-cache search package-name | grep application-name
+
+sudo apt-get purge package-name
+
+7. Update system packages
+sudo apt-get update
+
+8. Upgrade software packages
+sudo apt-get upgrade
+
+9. Display current mount systems
+findmnt 
+This command displays the target mount point (TARGET), the source device (SOURCE), file system type (FSTYPE), and relevant mount options (OPTIONS) for each filesystem
+
+10. Display Total, Free and Used memory in human readable format
+free -mhlt
+Options:
+-m, show output in megabytes
+-h, show human-readable output
+-l, show detailed low and high memory statistics
+-t, show total for RAM + swap
+
+
+
+
+11. List top processes according to RAM & CPU
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+
+12. Print total free memory in MB
+free -mht | awk '/Total/{ print $4 }'
+ 
+
