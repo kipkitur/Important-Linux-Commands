@@ -73,7 +73,7 @@ Command | Use
 
 *sudo apt-get update*
 
-![Update](https://github.com/kipkitur/Important-Linux-Commands/blob/master/Images/7.png)
+![Update](https://github.com/kipkitur/Important-Linux-Commands/blob/master/Images/7-.png)
 
 ### 8. Upgrade software packages
 
